@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-doomlog-dev-131210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::280824186584:role/amplify-doomlog-dev-131210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::280824186584:role/amplify-doomlog-dev-131210-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-doomlog-dev-131210-deployment",
+      "UnauthRoleName": "amplify-doomlog-dev-131210-unauthRole",
+      "StackName": "amplify-doomlog-dev-131210",
+      "StackId": "arn:aws:cloudformation:us-east-2:280824186584:stack/amplify-doomlog-dev-131210/9ffa3720-0a11-11ec-b280-023abc9c34d4",
+      "AmplifyAppId": "d16fthfiz2ihwg"
+    },
+    "categories": {
+      "auth": {
+        "doomlog2365116d": {}
+      }
+    }
+  }
+}

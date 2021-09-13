@@ -1,0 +1,43 @@
+<div class="container">
+        <hr class="line-info" />
+          <div class="title"><h1>둠로그는 이런 기술과 함께합니다!</h1></div>
+          <div class="row justify-content-between align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+              <h1 class="text-white font-weight-light">프로필에서 더욱 자세하게 볼 수 있습니다</h1>
+              <p class="text-white mt-4">
+                Angular & GraphQL & DynamoDB
+              </p>
+              <a
+                class="btn btn-warning mt-4"
+                [routerLink]="['/profile']"
+              >
+                프로필 보러가기
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <carousel [showIndicators]="false">
+                <slide>
+                  <img
+                    alt="First slide"
+                    class="d-block w-100"
+                    src="assets/img/angular.png"
+                  />
+                </slide>
+                <slide>
+                  <img
+                    alt="Second slide"
+                    class="d-block w-100"
+                    src="assets/img/graphql.png"
+                  />
+                </slide>
+                <slide>
+                  <img
+                    alt="Third slide"
+                    class="d-block w-100"
+                    src="assets/img/dynamodb.png"
+                  />
+                </slide>
+              </carousel>
+            </div>
+          </div>
+        </div>

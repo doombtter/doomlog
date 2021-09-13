@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="page-header header-filter">
+    <div class="squares square1"></div>
+    <div class="squares square2"></div>
+    <div class="squares square3"></div>
+    <div class="squares square4"></div>
+    <div class="squares square5"></div>
+    <div class="squares square6"></div>
+    <div class="squares square7"></div>
+    <div class="container">
+      <div class="content-center brand">
+                <blockquote>
+                  <p class="blockquote blockquote-danger">
+                    배우는 방법 중 하나는 실패할 때를 아는 것입니다 <br />
+                    <br />
+                    <small> - Robert Genn </small>
+                  </p>
+                </blockquote>
+              <img
+                alt="Circle image"
+                class="img-fluid rounded-circle shadow"
+                src="assets/img/me.jpg"
+                style="width: 150px;"
+              /> 
+              <hr/>
+              <h4>둠비터의 개발로그</h4>
+              <h5>IT 지식 공유 목적의 블로그 입니다.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="section section-notifications" id="notifications">
+      <div class="container">
+        <alert
+          class="alert-with-icon"
+          [type]="'success alert-with-icon'"
+          [dismissible]="true"
+        >
+          <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+          <span>
+            <b> 질문이 있나요? </b> 저의 <a [routerLink]="['/profile']">프로필</a>에 등록된 이메일을 통해 연락주세요
+          </span>
+        </alert>
+        <alert
+          class="alert-with-icon"
+          [type]="'info alert-with-icon'"
+          [dismissible]="true"
+        >
+          <span class="tim-icons icon-trophy" data-notify="icon"> </span>
+          <span>
+            현재 기온은 {{ondo}}°C 입니다.
+          </span>
+        </alert>
+      </div>
+    </div>
+  <div class="main">
+  <section class="section section-lg section-coins">
+    <img class="path" src="assets/img/path3.png" />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <hr class="line-info" />
+
+          <h1>
+            최신 글
+          <span class="text-info"> <a [routerLink]="['/list-all']">목록</a></span>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[AWS LAMBDA] 람다와 노드...</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-primary" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">우선 POST 방식의 사용...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[AWS LAMBDA] AWS람다를...</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-success" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">AWS Lambda는...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-success btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/favicon.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[프로그래머스] 오픈채팅방</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-info" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">오늘은 알고리즘 문제 중 오픈채...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-info btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section">
+  <app-c-profile></app-c-profile>
+</div>
+<app-footer></app-footer>

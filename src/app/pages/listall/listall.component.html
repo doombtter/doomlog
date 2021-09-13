@@ -1,0 +1,185 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="main">
+  <section class="section section-lg section-coins">
+  <div class="section section-notifications" id="notifications">
+      <div class="container">
+        <alert
+          class="alert-with-icon"
+          [type]="'success alert-with-icon'"
+          [dismissible]="true"
+        >
+          <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+          <span>
+            <b> 질문이 있나요? </b> 저의 <a [routerLink]="['/profile']">프로필</a>에 등록된 이메일을 통해 연락주세요
+          </span>
+        </alert>
+      </div>
+    </div>
+    <img class="path" src="assets/img/path3.png" />
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <button class="btn btn-primary btn-round mr-1" type="button" (click)="openModal(template)">
+              <i class="tim-icons icon-heart-2"> </i> 카테고리 선택
+            </button>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4">
+          <hr class="line-info" />
+          <h1>
+            {{display}} 글
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[AWS LAMBDA] 람다와 노드...</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-primary" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">우선 POST 방식의 사용...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-pagination">
+            <div class="col-md-6">
+            <pagination
+              class="pagination-danger"
+              [boundaryLinks]="true"
+              [totalItems]="45"
+              [ngModel]="pagination"
+              previousText="&lsaquo;"
+              nextText="&rsaquo;"
+              firstText="&laquo;"
+              lastText="&raquo;"
+            >
+            </pagination>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <hr class="line-info" />
+          <h1>
+            이런 글은 어때?
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[AWS LAMBDA] 람다와 노드...</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-primary" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">우선 POST 방식의 사용...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[AWS LAMBDA] AWS람다를...</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-success" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">AWS Lambda는...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-success btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/favicon.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">[프로그래머스] 오픈채팅방</h4>
+                  <span> 2021-08-27 </span>
+                  <hr class="line-info" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">오늘은 알고리즘 문제 중 오픈채...</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-info btn-simple">조회하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <div class="section">
+        <app-c-profile></app-c-profile>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<ng-template #template>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">카테고리 선택</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+         <span aria-hidden="true">×</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <select class="custom-select" (change)="changeCate($event.target.value)">
+        <option value="ALL">전체</option>
+        <option value="LIFE">일상</option>
+      </select>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="[category(), modalRef.hide()]">검색</button>
+      <button type="button" class="btn btn-default" (click)="modalRef.hide()">닫기</button>
+   </div>
+</ng-template>

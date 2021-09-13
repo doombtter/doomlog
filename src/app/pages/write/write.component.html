@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="main">
+  <section class="section section-lg section-coins">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <button class="btn btn-primary btn-round mr-1" type="button" (click)="openModal(template)">
+              <i class="tim-icons icon-heart-2"> </i> 섹션 설정
+            </button>
+          </div>
+        </div>
+      <div class="row" *ngIf="!loading">
+        <ng-container ngFor let-index [ngForIn]="#count">
+        <div class="col-md-4">
+          <hr class="line-info" />
+          <h1>
+            {{display}} 제목
+          </h1>
+        </div>
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)">
+        </label>
+        
+        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+      </ng-container>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+     <h4 class="modal-title pull-left">section</h4>
+     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+     </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-6 col-lg-3">
+        <div class="form-group">
+          <form class="form" [formGroup]="textform">
+            <input
+            class="form-control"
+            formControlName="sectionCount"
+            placeholder="Regular"
+            type="text"
+            value=""
+          />
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+     <button type="button" class="btn btn-default" (click)="[insert(), modalRef.hide()]">설정</button>
+     <button type="button" class="btn btn-default" (click)="modalRef.hide()">닫기</button>
+  </div>
+</ng-template>

@@ -1,0 +1,181 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateBlog {
+  onCreateBlog {
+    id
+    name
+    posts {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBlog {
+  onUpdateBlog {
+    id
+    name
+    posts {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBlog {
+  onDeleteBlog {
+    id
+    name
+    posts {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreatePost {
+  onCreatePost {
+    id
+    title
+    blogID
+    reg_date
+    content {
+      nextToken
+    }
+    blog {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    comments {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdatePost {
+  onUpdatePost {
+    id
+    title
+    blogID
+    reg_date
+    content {
+      nextToken
+    }
+    blog {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    comments {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeletePost {
+  onDeletePost {
+    id
+    title
+    blogID
+    reg_date
+    content {
+      nextToken
+    }
+    blog {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    comments {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateComment {
+  onCreateComment {
+    id
+    postID
+    post {
+      id
+      title
+      blogID
+      reg_date
+      createdAt
+      updatedAt
+    }
+    content
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateComment {
+  onUpdateComment {
+    id
+    postID
+    post {
+      id
+      title
+      blogID
+      reg_date
+      createdAt
+      updatedAt
+    }
+    content
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteComment {
+  onDeleteComment {
+    id
+    postID
+    post {
+      id
+      title
+      blogID
+      reg_date
+      createdAt
+      updatedAt
+    }
+    content
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSections {
+  onCreateSections {
+    id
+    postID
+    scontent
+    picture
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSections {
+  onUpdateSections {
+    id
+    postID
+    scontent
+    picture
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSections {
+  onDeleteSections {
+    id
+    postID
+    scontent
+    picture
+    createdAt
+    updatedAt
+  }
+}

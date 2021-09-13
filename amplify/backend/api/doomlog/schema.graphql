@@ -1,0 +1,29 @@
+type Blog @model {
+  id: ID!
+  name: String!
+  posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
+}
+
+type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+  id: ID!
+  title: String!
+  blogID: ID!
+  reg_date: AWSDate!
+  content: [Sections] @connection(keyName: "Section", fields: ["id"])
+  blog: Blog @connection(fields: ["blogID"])
+  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+}
+
+type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+  id: ID!
+  postID: ID!
+  post: Post @connection(fields: ["postID"])
+  content: String!
+}
+
+type Sections @model @key(name: "Section", fields: ["postID", "scontent"]){
+  id: ID!
+  postID: ID!
+  scontent: String!
+  picture: String!
+}

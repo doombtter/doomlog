@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "doomlog",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
