@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "list-all", component: ListAllComponent },
-  { path: "detail", component: PagedetailComponent },
+  { path: "detail/:page", component: PagedetailComponent },
   { path: "landing", component: LandingpageComponent },
   { path: "login", component: RegisterpageComponent},
   { path: "insertboard", component: WriteComponent}

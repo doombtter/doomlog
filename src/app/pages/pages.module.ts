@@ -30,7 +30,7 @@ import { ListAllComponent } from "./listall/listall.component";
 import { CProfileComponent } from '.././common/c-profile/c-profile.component';
 import { FooterComponent } from '.././common/footer/footer.component';
 import { NavbarComponent } from '.././common/navbar/navbar.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { apiservice } from "../service/apiservice";
 import { uploadservice } from "../service/uploadservice";
 import { PagedetailComponent } from './pagedetail/pagedetail.component';
@@ -57,6 +57,7 @@ import { WriteComponent } from './write/write.component';
     HttpClientModule,
     ReactiveFormsModule,
     AmplifyAngularModule,
+    NgbModule,
   ],
   declarations: [
     IndexComponent,

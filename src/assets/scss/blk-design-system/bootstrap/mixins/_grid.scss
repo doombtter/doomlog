@@ -46,6 +46,7 @@
   // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
   // do not appear to require this.
   max-width: percentage($size / $columns);
+  margin-bottom: 10%;
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {

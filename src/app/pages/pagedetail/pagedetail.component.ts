@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { apiservice } from '../../service/apiservice'
 
 @Component({
   selector: 'app-pagedetail',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagedetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route : ActivatedRoute, private router : Router, private api : apiservice) { }
+  title;
+  section:any = []
+  pageload = false
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    let pagenum = this.route.snapshot.paramMap.get('page')
+    await this.getDetails(Number(pagenum));
   }
 
+  async getDetails(page: number){
+    let data = {
+      "target" : page
+    }
+
+    try {
+      let res : any = await this.api.target(JSON.stringify(data)).toPromise();
+      this.title = res.title;
+      this.pageload = true;
+      this.section = res.content;
+      this.pageload = false;
+    } catch (error) {
+    }
+  }
 }

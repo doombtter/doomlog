@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import noUiSlider from "nouislider";
 import { apiservice } from '../../service/apiservice';
 import { APIService } from '../../API.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-index",
@@ -15,29 +15,37 @@ export class IndexComponent implements OnInit, OnDestroy {
   weather;
   pagination = 3;
   pagination1 = 1;
-  constructor(private outapi : apiservice, private api : APIService) {}
+  constructor(private outapi : apiservice, private api : APIService, private router : Router) {}
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
   blog:any = [];
+  list:any = [];
+  pageload = false;
 
   async ngOnInit() {
+    this.pageload = true;
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
-    await this.getweather();
+    await this.getweather()
+    await this.getPostList()
+    this.pageload = false;
+  }
 
-    let list = await this.api.ListBlogs();
-    this.blog = list.items;
-
-    //
-    // const data ={
-    //   name : Math.floor(Math.random() * 100) + "A"
-    // }
-
-    // let result = await this.api.CreateBlog(data);
-
-    // this.blog.push(result);
-    // console.log(result);
+  async getPostList() {
+    let data = {
+      "cate" : "A"
+    }
+    try {
+      let res : any = await this.outapi.list(JSON.stringify(data)).toPromise();
+      this.list[0] = res[0]
+      this.list[1] = res[1]
+      this.list[2] = res[2]
+    } catch (error) {
+    }
+  }
+  getDate(date){
+    return date.substring(0, 10)
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
@@ -47,6 +55,10 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   ondo = 0;
   icon;
+
+  move(id){
+    this.router.navigate(['detail/' + id]);
+  }
 
   async getweather(){
     try{

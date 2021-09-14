@@ -15,4 +15,12 @@ export class apiservice {
     login(data){
         return this.http_c.post(environment.endp2, data);
     }
+
+    list(data){
+        return this.http_c.post(environment.endp3, data);
+    }
+
+    target(data){
+        return this.http_c.post(environment.endp4, data);
+    }
 }
