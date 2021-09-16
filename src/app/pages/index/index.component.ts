@@ -62,7 +62,7 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   async getweather(){
     try{
-      let result : any = await this.outapi.getWeather("http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=").toPromise();
+      let result : any = await this.outapi.getWeather("https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=").toPromise();
 
       this.ondo = Math.floor((result.main.temp - 273.15)*10)/10
     }catch(error){

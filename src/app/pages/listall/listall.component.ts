@@ -20,14 +20,26 @@ export class ListAllComponent implements OnInit, OnDestroy {
 
   pageload = false;
 
+  rand : any = [];
+
   constructor(private modalService: BsModalService, private fb : FormBuilder, private api : apiservice, private router: Router) {}
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
   async ngOnInit() {
+    this.pageload = true;
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
     await this.getPostList();
+    let i = 0;
+    while ( i < 3){
+      let n = Math.floor(Math.random() * this.POSTS.length)
+      if(!this.rand.includes(n)){
+        this.rand.push(n)
+        i++
+      }
+    }
+    this.pageload = false;
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];

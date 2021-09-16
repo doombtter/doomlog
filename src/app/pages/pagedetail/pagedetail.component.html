@@ -6,10 +6,18 @@
         <hr class="line-info" />
         <div class="title"><h1>목차</h1></div>
         <blockquote>
-              <h6 *ngFor="let o of section; index as i">{{(i+1) + '. ' + o.section}}</h6>
+              <h6 *ngFor="let o of section; index as i">{{(i+1) + '. ' + o.stitle}}</h6>
         </blockquote>
         <hr class="line-info" />
         <div class="title"><h1>{{title}}</h1></div>
+        <div class="title"><h4>{{date}}</h4></div>
+        <hr class="line-info" />  
+        <ng-container *ngFor="let o of section; index as i">            
+        <img class="section image" src={{o.img}}/> 
+        <p class="text-white mb-3">
+          {{o.section}}
+        </p>
+        </ng-container>
     </div>
   </section>
   <div class="section">

@@ -13,18 +13,29 @@
       <div class="row" *ngIf="!loading">
         <ng-container>
         <div class="col-md-4">
-          <hr class="line-info" />
-          <h1>
-            {{display}} 제목
-          </h1>
+        <hr class="line-info" />
+        <form class="form" [formGroup]="writeform">
+        <p>제목<p><input type="text" formControlName="title">
+        <p>인트로<p><input type="text" formControlName="intro">
+        <p>카테고리<p><input type="text" formControlName="cate">
+        <p>타이틀 이미지 선택<p><input type="file" (change)="selectFile($event)">
+        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="titleupload()">Upload</button>
+        </form>
         </div>
-        <label class="btn btn-default">
-          <input type="file" (change)="selectFile($event)">
-        </label>
-        
-        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
-      </ng-container>
+        </ng-container>
+        <ng-container *ngFor = "let sec of content; index as i">
+          <div class="col-md-4">
+          <hr class="line-info" />
+          <form class="form" [formGroup]="contentform">
+          <p>섹션{{i+1}} 제목<p><input type="text" formControlName="stitle">
+          <p>섹션 내용<p><input type="text" formControlName="section">
+          <p>섹션 이미지 선택<p><input type="file" (change)="selectFile($event)">
+          </form>
+          <button class="btn btn-success" [disabled]="!selectedFiles" (click)="push(i)">push</button>
+          </div>
+        </ng-container>
       </div>
+      <button class="btn btn-success" (click)="upload()">글 작성</button>
     </div>
   </section>
   <app-footer></app-footer>

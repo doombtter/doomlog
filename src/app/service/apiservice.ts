@@ -12,6 +12,10 @@ export class apiservice {
         return this.http_c.get(url + environment._weatherid);
     }
 
+    upload(data){
+        return this.http_c.post(environment.endp1, data);
+    }
+
     login(data){
         return this.http_c.post(environment.endp2, data);
     }

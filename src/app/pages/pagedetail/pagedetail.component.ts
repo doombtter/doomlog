@@ -11,6 +11,7 @@ export class PagedetailComponent implements OnInit {
 
   constructor(private route : ActivatedRoute, private router : Router, private api : apiservice) { }
   title;
+  date;
   section:any = []
   pageload = false
 
@@ -27,6 +28,7 @@ export class PagedetailComponent implements OnInit {
     try {
       let res : any = await this.api.target(JSON.stringify(data)).toPromise();
       this.title = res.title;
+      this.date = res.date.substring(0, 10)
       this.pageload = true;
       this.section = res.content;
       this.pageload = false;

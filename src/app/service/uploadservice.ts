@@ -28,6 +28,6 @@ export class uploadservice {
               }
           });
 
-        return params.Key;
+        return "https://doomimg.s3.ap-northeast-2.amazonaws.com/" + params.Key;
     }
 }

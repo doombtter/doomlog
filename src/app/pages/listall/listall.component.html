@@ -79,72 +79,72 @@
         <div class="col-md-4">
           <div class="card card-coin card-plain">
             <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+              <img class="img-center img-fluid" src={{POSTS[rand[0]].titleimgsrc}} />
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">[AWS LAMBDA] 람다와 노드...</h4>
-                  <span> 2021-08-27 </span>
+                  <h4 class="text-uppercase">{{POSTS[rand[0]].title}}</h4>
+                  <span> {{getDate(POSTS[rand[0]].date)}} </span>
                   <hr class="line-primary" />
                 </div>
               </div>
               <div class="row">
                 <ul class="list-group">
-                  <li class="list-group-item">우선 POST 방식의 사용...</li>
+                  <li class="list-group-item">{{POSTS[rand[0]].intro}}</li>
                 </ul>
               </div>
             </div>
             <div class="card-footer text-center">
-              <button class="btn btn-primary btn-simple">조회하기</button>
+              <button class="btn btn-primary btn-simple" (click)="move(POSTS[rand[0]].id)">조회하기</button>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card card-coin card-plain">
             <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/lambdaimg.png" />
+              <img class="img-center img-fluid" src={{POSTS[rand[1]].titleimgsrc}} />
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">[AWS LAMBDA] AWS람다를...</h4>
-                  <span> 2021-08-27 </span>
+                  <h4 class="text-uppercase">{{POSTS[rand[1]].title}}</h4>
+                  <span> {{getDate(POSTS[rand[1]].date)}} </span>
                   <hr class="line-success" />
                 </div>
               </div>
               <div class="row">
                 <ul class="list-group">
-                  <li class="list-group-item">AWS Lambda는...</li>
+                  <li class="list-group-item">{{POSTS[rand[1]].intro}}</li>
                 </ul>
               </div>
             </div>
             <div class="card-footer text-center">
-              <button class="btn btn-success btn-simple">조회하기</button>
+              <button class="btn btn-success btn-simple" (click)="move(POSTS[rand[1]].id)">조회하기</button>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card card-coin card-plain">
             <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/favicon.png" />
+              <img class="img-center img-fluid" src={{POSTS[rand[2]].titleimgsrc}} />
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">[프로그래머스] 오픈채팅방</h4>
-                  <span> 2021-08-27 </span>
+                  <h4 class="text-uppercase">{{POSTS[rand[2]].title}}</h4>
+                  <span> {{getDate(POSTS[rand[2]].date)}} </span>
                   <hr class="line-info" />
                 </div>
               </div>
               <div class="row">
                 <ul class="list-group">
-                  <li class="list-group-item">오늘은 알고리즘 문제 중 오픈채...</li>
+                  <li class="list-group-item">{{POSTS[rand[2]].intro}}</li>
                 </ul>
               </div>
             </div>
             <div class="card-footer text-center">
-              <button class="btn btn-info btn-simple">조회하기</button>
+              <button class="btn btn-info btn-simple" (click)="move(POSTS[rand[2]].id)">조회하기</button>
             </div>
           </div>
         </div>
