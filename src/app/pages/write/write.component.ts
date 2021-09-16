@@ -77,7 +77,8 @@ export class WriteComponent implements OnInit {
       "intro" : this.writeform.get('intro').value,
       "title" : this.writeform.get('title').value,
       "content" : this.content,
-      "use_plag" : "Y"
+      "use_plag" : "Y",
+      "code" : this.ck.get('SSO_UUID')
     }
     try {
       let res : any = await this.api.upload(JSON.stringify(data)).toPromise();
