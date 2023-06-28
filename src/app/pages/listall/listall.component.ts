@@ -52,11 +52,9 @@ export class ListAllComponent implements OnInit, OnDestroy {
     }
     try {
       let res : any = await this.api.list(JSON.stringify(data)).toPromise();
-      this.pageload = true;
       this.POSTS = res;
       this.collectionSize = res.length;
       this.getPagenation();
-      this.pageload = false;
     } catch (error) {
     }
   }
@@ -89,7 +87,18 @@ export class ListAllComponent implements OnInit, OnDestroy {
     else if(this.value == 'ALG')
     this.display = "Algorithm"
 
+    this.pageload = true;
     await this.getPostList();
+    this.rand = []
+    let i = 0;
+    while ( i < 3){
+      let n = Math.floor(Math.random() * this.POSTS.length)
+      if(!this.rand.includes(n)){
+        this.rand.push(n)
+        i++
+      }
+    }
+    this.pageload = false;
   }
   
   getDate(date){
